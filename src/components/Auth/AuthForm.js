@@ -11,10 +11,6 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-    const ctx = useContext(AuthContext);
-
-   
-
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
@@ -50,7 +46,7 @@ const AuthForm = () => {
              return res.json();
            } else {
              return res.json().then((data) => {
-               let errorMessage = "Authentication";
+               let errorMessage = "Authentication failed";
                //  if (data && data.error && data.error.message) {
                //    errorMessage = data.error.message;
                //  }
